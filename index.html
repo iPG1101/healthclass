@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tomatoes (Slide 1)</title>
+		<link rel='favicon' src='https://cdn4.iconfinder.com/data/icons/food-and-drinks-2-8/36/171-512.png' />
+		<link rel='icon' src='https://cdn4.iconfinder.com/data/icons/food-and-drinks-2-8/36/171-512.png' />
+		<link rel='shortcut icon' src='https://cdn4.iconfinder.com/data/icons/food-and-drinks-2-8/36/171-512.png' />
+		<link rel='shortcut icon' href='http://www.iconarchive.com/download/i80791/bingxueling/fruit-vegetables/tomato.ico' />
+		<link rel='favTicon' href='http://www.iconarchive.com/download/i80791/bingxueling/fruit-vegetables/tomato.ico' />
+		<link rel='icon' href='http://www.iconarchive.com/download/i80791/bingxueling/fruit-vegetables/tomato.ico' />
+		<style>
+			@font-face {
+				font-family: TheBeatles;
+				src: url(https://jdevteam2018.github.io/fonts/thebeatles.ttf);
+			}
+			 @font-face {
+				font-family: HardDaysNight;
+				src: url(https://jdevteam2018.github.io/fonts/harddaysnight.ttf);
+			}
+			 @font-face {
+				font-family: JohnLennon;
+				src: url(https://jdevteam2018.github.io/fonts/johnlennon.ttf);
+			}
+			@keyframes dissapear {
+				0% {
+					opacity: 100%;
+				}
+				33% {
+					transform: rotate(-10deg);
+					opacity: 0.3;
+				}
+				80% {
+					font-size: 0px;
+					text-align: center;
+				}
+				100% {
+					transform: rotate(2880deg);
+					opacity: 0;
+					height: 0vh;
+				}
+			}
+			@keyframes idkanymore1 {
+				0% {
+					letter-spacing: 0.8vw;
+					transform: rotate(2deg);
+				}
+				20% {
+					letter-spacing: 1.2vw;
+				}
+				40% {
+					letter-spacing: 1.1vw;
+				}
+				50% {
+					transform: rotate(-2deg);
+				}
+				60% {
+					letter-spacing: 1.2vw;
+				}
+				80% {
+					letter-spacing: 0.7vw;
+				}
+				100% {
+					letter-spacing: 0.8vw;
+					transform: rotate(2deg);
+				}
+			}
+			@keyframes idkanymore2 {
+				0% {
+					letter-spacing: 0.1vw;
+					filter: hue-rotate(0deg);
+					transform: rotate(2deg);
+					font-size: 100%;
+				}
+				20% {
+					letter-spacing: 0.15vw;
+				}
+				40% {
+					letter-spacing: 0.1vw;
+				}
+				50% {
+					transform: rotate(-2deg);
+					font-size: 95%;
+				}
+				60% {
+					letter-spacing: 0.15vw;
+				}
+				80% {
+					letter-spacing: 0.05vw;
+				}
+				100% {
+					letter-spacing: 0.11vw;
+					transform: rotate(2deg);
+					filter: hue-rotate(360deg);
+					font-size: 100%;
+				}
+			}
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			html, body {
+				overflow: hidden;
+			}
+			div.slide, div.slide2 {
+				width: 100vw;
+				height: 100vh;
+				color: white;
+				background: black;
+				border-bottom: solid 0.1vh white;
+			}
+			h1, h2, h3 {
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+			}
+			h1, h3 {
+				height: 50vh;
+				line-height: 80vh;
+				letter-spacing: 1vw;
+			}
+			h1 {
+				animation: 2s idkanymore1 linear infinite;
+				font-family: TheBeatles;
+				font-size: 10vw;
+			}
+			i {
+				animation: 2s idkanymore2 linear infinite;
+			}
+			h3 {
+				font-size: 5vw;
+				line-height: 60vh;
+				height: 40vh;
+			}
+			.a {
+				font-family: HardDaysNight;
+			}
+			.b {
+				font-family: TheBeatles;
+			}
+			.c {
+				font-family: JohnLennon;
+			}
+			h2, h4 {
+				height: 40vh;
+				font-size: 4vw;
+				font-family: JohnLennon;
+				letter-spacing: 0.5vw;
+			}
+			h2 {
+				line-height: 12vw;
+			}
+			h4 {
+				line-height: 4vw;
+				width: 80%;
+				padding-left: 8%;
+			}
+			h4::first-letter {
+				padding-left: 1vw;
+			}
+			i {
+				text-decoration: underline;
+				color: #9CF;
+				letter-spacing: 0;
+				width: 70%;
+				text-align: center;
+				padding-left: 10%;
+				display: block;
+			}
+			.left, .right {
+				position: absolute;
+				width: 50vw;
+			}
+			.left {
+				left: 0;
+			}
+			.right {
+				right: 0;
+			}
+			u {
+				background-image: url(http://www.iconarchive.com/download/i80791/bingxueling/fruit-vegetables/tomato.ico);
+				background-size: 100% 50%;
+				background-repeat: repeat-x;
+				background-position: 0 60%;
+				color: transparent;
+			}
+		</style>
+		<script>
+			var slide = 1,
+			    	mode = 1;
+			window.onerror = function(a,b,c,d,e) {
+				var errmsg = ([a,b,c,d,e]).join('\n');
+				if(e.includes('TypeError')) {
+					//Crap there isn't another slide
+					return;
+				};
+				mode = 2;
+				location.hash = 'slide1';
+				alert(errmsg);
+			};
+			var l;
+			window.onload = function onload() {
+				l = document.querySelectorAll('.slide,.slide2').length;
+				var slides = document.querySelectorAll('.slide, .slide2');
+				for(var i = 0; i < slides.length; i++) {
+					slides[i].id = 'slide' + (i + 1);
+				};
+			};
+			window.previousslides = [];
+			window.onkeydown = window.onmousedown = window.oncontextmenu = function(evt) {
+				if(evt.which == 2 || evt.which == 37 || evt.which == 65) {
+					if(!(window.previousslides[window.previousslides.length-1])) {
+						if(window.previousslides.length > 0) window.previousslides.length -= 1;
+						return;
+					};
+					evt.preventDefault();
+					document.body.prepend(window.previousslides[window.previousslides.length-1]);
+					window.previousslides.length -= 1;
+					if(!!(slide-1)) slide --;
+				} else if(evt.which == 0 || evt.which == 1 ||  evt.which == 39 | evt.which == 68) {
+					evt.preventDefault();
+					var div = document.querySelector('div.slide');
+					if(div && div.querySelector('.adios.mis.amigos')) {
+						div = div.querySelector('.adios.mis.amigos');
+						setTimeout((div)=>{
+							div.style.opacity = '0';
+							(div.parentElement || document.body).removeChild(div);
+						}, 1670, div);
+						div.style.animation = '1.7s dissapear linear';
+					} else {
+						if(slide < l) window.previousslides.push(div);
+						if(mode == 1) (div.parentElement || document.body).removeChild(div);
+						if(slide < l) slide++;
+					}
+				};
+				if(mode == 2) location.hash = ("#slide" + slide);
+				document.title = "Tomatoes (Slide " + slide + ")";
+				// history.replaceState(undefined, undefined,  '#slide' + slide);
+			};
+		</script>
+	</head>
+	<body>
+		<div class='slide'>
+			<h1>T<u>o</u>mat<u>o</u>es</h1>
+			<h2>By John D. Jelatis</h2>
+		</div>
+		<div class='slide'>
+			<h3 style='font-size: 3vw' class='a'>NUTRIENTS OF THE TOMATO</h3>
+			<div class='left'>
+				<h4 style='font-size: 2vw' class='c'>Tomatoes are a great source of <i class='b'>antioxidant lycopene,</i> which help reduce <a style='color:#F66'>heart attacks</a> and <a style='color:#C33'>cancer</a>.</h4>
+			</div>
+			<div class='right'>
+				<h4 style='font-size: 2vw' class='c'>They also are a good source of <i class='b'>vitamin C,</i> which helps form <a style='color:#F66'>blood cells, muscle, bones,</a> <a style='color:#C33'>et cetera</a>.</h4>
+			</div>
+		</div>
+		<div class='slide'>
+			<h3 style='font-size: 3vw; line-height: 25vh; height: 25vh' class='a'>NUTRIENTS OF THE TOMATO</h3>
+			<div class='left'>
+				<h4 style='font-size: 2vw' class='c'>Tomatoes are a nice source of <i class='b'>potassium</i> as well, and that helps maintain a constant <a style='color:#F66'>blood pressure</a>.</h4>
+			</div>
+			<div class='right'>
+				<h4 style='font-size: 2vw' class='c'>They are also source of <i class='b'>vitamin &zwj; K!</i> This helps the body with <a style='color:#D33'>blood clotting, or scabbing</a>. That way, if you get a paper cut, you do not <a style='color:#F66'>bleed to death!</a><a style='font-size: 20%; display: block'>(slight exaggeration)</a></h4>
+			</div>
+		</div>
+		<div class='slide'>
+			<h3 class='a'>GOOD WAYS TO EAT IT</h3>
+			<h4 class='c adios mis amigos' style='padding-top: 0; padding-bottom: 0; height: 12vh;'><s style='display: inline; padding: 0; margin: 0'>- With your mouth</s></h4>
+			<h4 class='c' style='padding-top: 0; padding-bottom: 0; height: 20vh;'>- In a cheeseburger 
+				(-&gt; <img style='animation: 2s idkanymore2 linear infinite;padding-top: 2vh; width: 8vw; height: 10vh; ' src='https://upload.wikimedia.org/wikipedia/commons/1/11/Cheeseburger.png' />)
+			</h4><br/>
+			<h4 class='c' style='padding-top: 0; padding-bottom: 0; height: 20vh;'>- In a salad</h4>
+			<h4 class='c' style='padding-top: 0; padding-bottom: 0; height: 20vh;'>- In an omelette</h4>
+			<h4 class='c' style='padding-top: 0; padding-bottom: 0; height: 20vh;'>- Be creative</h4>
+		</div>
+		<div class='slide2'>
+			<h4 style='color: #09F; height: 15vh; line-height: 5vh;font-size: 2vw;letter-spacing:1%' onmousedown="window.open(this.innerText);return false"><br/><br/>https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional </h4>
+			<h4 style='color: #09F; height: 15vh; line-height: 5vh;font-size: 2vw;letter-spacing:1%' onmousedown="window.open(this.innerText);return false"><br/><br/>https://www.healthline.com/health/potassium</h4>
+			<h4 style='color: #09F; height: 15vh; line-height: 5vh;font-size: 2vw;letter-spacing:1%' onmousedown="window.open(this.innerText);return false"><br/><br/>https://www.webmd.com/vitamins/ai/ingredientmono-983/vitamin-k</h4>
+		</div>
+	</body>	
+</html>
